@@ -32,7 +32,7 @@ public class FunctionTest {
         final HttpRequestMessage<Optional<String>> req = mock(HttpRequestMessage.class);
 
         final Map<String, String> queryParams = new HashMap<>();
-        queryParams.put("name", "Azure");
+        queryParams.put("name", "World");
         doReturn(queryParams).when(req).getQueryParameters();
 
         final Optional<String> queryBody = Optional.empty();
@@ -54,5 +54,6 @@ public class FunctionTest {
 
         // Verify
         assertEquals(ret.getStatus(), HttpStatus.OK);
+        assertEquals(ret.getBody(),"Hello, World");
     }
 }
