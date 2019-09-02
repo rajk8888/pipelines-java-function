@@ -8,6 +8,9 @@ import com.microsoft.azure.functions.*;
  * Azure Functions with HTTP Trigger.
  */
 public class Function {
+    
+    public static final String VIP_PREFIX="vip:"
+        
     /**
      * This function listens at endpoint "/api/HttpTrigger-Java". Two ways to invoke it using "curl" command in bash:
      * 1. curl -d "HTTP Body" {your host}/api/HttpTrigger-Java&code={your function key}
@@ -28,7 +31,12 @@ public class Function {
         if (name == null) {
             return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("Please pass a name on the query string or in the request body").build();
         } else {
-            return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+            if (name.startsWith(VIP_PREFIX) {
+                int startIndexOfActualName = VIP_PREFIX.length();
+                return request.createResponseBuilder(HttpStatus.OK).body("A Very Special Hello To, " + name.substring(startIndexOfActualName)).build();
+            } else {
+                return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+            }
         }
     }
 }
