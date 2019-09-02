@@ -89,7 +89,7 @@ public class FunctionTest {
 
         // Verify
         assertEquals(ret.getStatus(), HttpStatus.OK);
-        assertEquals(ret.getBody(),"Hello, World");
+        assertEquals(ret.getBody(),"A Very Special Hello To, World");
     }
     
 }
