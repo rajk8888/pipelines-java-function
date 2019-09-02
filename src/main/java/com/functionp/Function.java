@@ -9,7 +9,6 @@ import com.microsoft.azure.functions.*;
  */
 public class Function {
     
-    public static final String VIP_PREFIX="vip:"
         
     /**
      * This function listens at endpoint "/api/HttpTrigger-Java". Two ways to invoke it using "curl" command in bash:
@@ -24,6 +23,8 @@ public class Function {
             final ExecutionContext context) {
         context.getLogger().info("Java HTTP trigger processed a request.");
 
+        String VIP_PREFIX="vip:"
+    
         // Parse query parameter
         String query = request.getQueryParameters().get("name");
         String name = request.getBody().orElse(query);
