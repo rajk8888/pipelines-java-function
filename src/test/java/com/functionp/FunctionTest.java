@@ -57,11 +57,11 @@ public class FunctionTest {
         assertEquals(ret.getBody(),"Hello, World");
     }
     
-/**
+    /**
      * Unit test for HttpTriggerJava method with the VIP return code.
      */
     @Test
-    public void testHttpTriggerJava-TestingVIP() throws Exception {
+    public void testHttpTriggerJavaTestingVIP() throws Exception {
         // Setup
         @SuppressWarnings("unchecked")
         final HttpRequestMessage<Optional<String>> req = mock(HttpRequestMessage.class);
