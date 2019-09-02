@@ -30,7 +30,7 @@ public class Function {
         if (name == null) {
             return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("Please pass a name on the query string or in the request body").build();
         } else {
-            if (name.startsWith(VIP_PREFIX) {
+            if (name.startsWith(VIP_PREFIX)) {
                 int startIndexOfActualName = VIP_PREFIX.length();
                 return request.createResponseBuilder(HttpStatus.OK).body("A Very Special Hello To, " + name.substring(startIndexOfActualName)).build();
             } else {
