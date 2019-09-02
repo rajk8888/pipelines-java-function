@@ -54,6 +54,7 @@ public class FunctionTest {
 
         // Verify
         assertEquals(ret.getStatus(), HttpStatus.OK);
+        assertEquals(ret.getBody(),"fred");
     }
     
      /**
